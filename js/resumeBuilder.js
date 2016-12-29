@@ -65,5 +65,8 @@ if (work.jobs.length > 0)
 	for (job in work.jobs){
 		$("#workExperience").append(HTMLworkStart);
 		$(".work-entry:last").append(HTMLworkEmployer.replace("%data%",work.jobs[job].employer)+HTMLworkTitle.replace("%data%",work.jobs[job].title));
-	}
+		$(".work-entry:last").append(HTMLworkDates.replace("%data%",work.jobs[job].dates));
+		$(".work-entry:last").append(HTMLworkLocation.replace("%data%",work.jobs[job].location));
+		$(".work-entry:last").append(HTMLworkDescription.replace("%data%",work.jobs[job].description));
+		}
 }
