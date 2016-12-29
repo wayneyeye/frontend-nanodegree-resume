@@ -89,7 +89,7 @@ $("#main").append(internationalizeButton);
 function inName(name){
   var splittedname=name.trim().split(" ");
   splittedname[1]=splittedname[1].toUpperCase();
-  splittedname[0]=splittedname[0].charAt(0).toUpperCase()+splittedname[0].slice(1);
+  splittedname[0]=splittedname[0].charAt(0).toUpperCase()+splittedname[0].slice(1).toLowerCase();
   return splittedname[0]+" "+splittedname[1];
 }
-// console.log(inName("sebastian thrun"));
+console.log(inName("sebastian thrun"));
