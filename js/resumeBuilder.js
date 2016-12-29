@@ -21,6 +21,8 @@ funThoughts=awesomeThoughts.replace("AWESOME","FUN");
  var array_length = ["hello", "world"];
  console.log(array_length.length);
 
+
+//BIO Section
  var bio = {
  	"name" : "Wayne Ye",
  	"role" : "Web Developer",
@@ -30,38 +32,43 @@ funThoughts=awesomeThoughts.replace("AWESOME","FUN");
  	"skills" : ["JS", "SQL", "VBA"]
  }
 
- $("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
- $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
+bio.display = function() {
+	$("#header").prepend(HTMLheaderName.replace("%data%", bio.name));
+ 	$("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
 
 
-if (bio.skills.length!=0){
-	$("#header").append(HTMLskillsStart);
+	if (bio.skills.length!=0){
+		$("#header").append(HTMLskillsStart);
+	}
+	for (skill in bio.skills){
+		$("#skills").append(HTMLskills.replace("%data%",bio.skills[skill]));
+	}
 }
-for (skill in bio.skills){
-	$("#skills").append(HTMLskills.replace("%data%",bio.skills[skill]));
-}
+bio.display();
+
+
 
 /*WORK SECTION*/
-function displayWork(){
-	var work = {
-	"jobs" : [
-		{
-			"employer" : "Nestle",
-			"title" : "Process Engineer",
-			"location" : "Shanghai",
-			"dates" : "2012/07 - 2012/08",
-			"description" : "Summer Internship"
-		},
-		{
-			"employer" : "Italenta, inc",
-			"title" : "SQL Developer",
-			"location" : "Denver, CO",
-			"dates" : "2016/06-2016/12",
-			"description" : "Senior Developer"
-		}
-		]
+var work = {
+"jobs" : [
+	{
+		"employer" : "Nestle",
+		"title" : "Process Engineer",
+		"location" : "Shanghai",
+		"dates" : "2012/07 - 2012/08",
+		"description" : "Summer Internship"
+	},
+	{
+		"employer" : "Italenta, inc",
+		"title" : "SQL Developer",
+		"location" : "Denver, CO",
+		"dates" : "2016/06-2016/12",
+		"description" : "Senior Developer"
 	}
+	]
+}
 
+work.display = function(){
 	if (work.jobs.length > 0)
 	{
 		for (job in work.jobs){
@@ -74,7 +81,7 @@ function displayWork(){
 	}
 }
 
-displayWork();
+work.display();
 
 $(document).click(function(loc) {
   // your code goes here!
@@ -83,13 +90,11 @@ $(document).click(function(loc) {
 
 //INNAME
 
-$("#main").append(internationalizeButton);
-
-
+// $("#main").append(internationalizeButton);
 function inName(name){
   var splittedname=name.trim().split(" ");
   splittedname[1]=splittedname[1].toUpperCase();
   splittedname[0]=splittedname[0].charAt(0).toUpperCase()+splittedname[0].slice(1).toLowerCase();
   return splittedname[0]+" "+splittedname[1];
 }
-console.log(inName("sebastian thrun"));
+// console.log(inName("sebastian thrun"));
