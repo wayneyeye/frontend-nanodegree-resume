@@ -70,6 +70,13 @@ $(document).ready(function() {
   });
 });
 
+function inName(name){
+  var splittedname=name.split(" ");
+  splittedname[1]=splittedname[1].toUpperCase();
+  splittedname[0]=splittedname[0].charAt(0).toUpperCase()+splittedname[0].slice(1);
+  return splittedname[0]+" "+splittedname[1];
+}
+
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in the lesson Flow Control from JavaScript Basics.
 */

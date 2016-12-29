@@ -2,7 +2,7 @@
 This is empty on purpose! Your code to build the resume will go here.
  */
 
- $("#main").append("Wayne Ye");
+ $("#main").prepend("Wayne Ye");
  var awesomeThoughts = "I am Wayne and I am AWESOME!";
  console.log(awesomeThoughts);
 
@@ -81,3 +81,15 @@ $(document).click(function(loc) {
   logClicks(loc.pageX,loc.pageY);
 });
 
+//INNAME
+
+$("#main").append(internationalizeButton);
+
+
+function inName(name){
+  var splittedname=name.trim().split(" ");
+  splittedname[1]=splittedname[1].toUpperCase();
+  splittedname[0]=splittedname[0].charAt(0).toUpperCase()+splittedname[0].slice(1);
+  return splittedname[0]+" "+splittedname[1];
+}
+// console.log(inName("sebastian thrun"));
