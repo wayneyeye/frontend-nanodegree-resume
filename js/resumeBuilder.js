@@ -75,3 +75,9 @@ function displayWork(){
 }
 
 displayWork();
+
+$(document).click(function(loc) {
+  // your code goes here!
+  logClicks(loc.pageX,loc.pageY);
+});
+
