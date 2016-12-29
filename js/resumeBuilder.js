@@ -34,4 +34,36 @@ funThoughts=awesomeThoughts.replace("AWESOME","FUN");
  $("#header").prepend(HTMLheaderRole.replace("%data%", bio.role));
 
 
+if (bio.skills.length!=0){
+	$("#header").append(HTMLskillsStart);
+}
+for (skill in bio.skills){
+	$("#skills").append(HTMLskills.replace("%data%",bio.skills[skill]));
+}
 
+var work = {
+	"jobs" : [
+		{
+			"employer" : "Nestle",
+			"title" : "Process Engineer",
+			"location" : "Shanghai",
+			"dates" : "2012/07 - 2012/08",
+			"description" : "Summer Internship"
+		},
+		{
+			"employer" : "Italenta, inc",
+			"title" : "SQL Developer",
+			"location" : "Denver, CO",
+			"dates" : "2016/06-2016/12",
+			"description" : "Senior Developer"
+		}
+	]
+}
+
+if (work.jobs.length > 0)
+{
+	for (job in work.jobs){
+		$("#workExperience").append(HTMLworkStart);
+		$(".work-entry:last").append(HTMLworkEmployer.replace("%data%",work.jobs[job].employer)+HTMLworkTitle.replace("%data%",work.jobs[job].title));
+	}
+}
